@@ -1,0 +1,188 @@
+/*
+** Global
+*/
+
+html, body {
+    padding: 0;
+    margin: 0;
+
+    overflow-y: hidden;
+}
+
+.diaporama__section {
+    float: left;
+
+    width: 100%;
+    height: 250px;
+
+    position: relative;
+
+    background-color: #000000;
+
+    overflow-x: auto;
+}
+
+.diaporama__section__close {
+    position: fixed;
+    top: 65px;
+    right: .2em;
+    z-index: 100;
+
+    color: #ffffff;
+    font-size: 3em;
+    text-shadow: 1px 1px 1px #000000;
+
+    cursor: pointer;
+}
+
+.diaporama__section h2 {
+    position: relative;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    margin: 0;
+
+    background-size: cover;
+    background-position: center;
+
+    font-size: 3em;
+    font-family: 'libesansweb-semicondensed', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #ffffff;
+    -webkit-text-shadow: 1px 1px 1px #000000;
+            text-shadow: 1px 1px 1px #000000;
+}
+
+.diaporama__section h2 span.title {
+    max-width: 90%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+         -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+    -webkit-transition: all 500ms linear;
+       -moz-transition: all 500ms linear;
+        -ms-transition: all 500ms linear;
+         -o-transition: all 500ms linear;
+            transition: all 500ms linear;
+}
+
+.diaporama__section h2 span.title span {
+    float: none;
+    display: inline;
+}
+
+.diaporama__section__slide {
+    height: 100%;
+}
+
+.diaporama__section:nth-child(1) h2 { background-image: url(); }
+
+/*
+** Closed
+*/
+
+.diaporama__section:not(.open) {
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+.diaporama__section:not(.open) .diaporama__section__close,
+.diaporama__section:not(.open) .diaporama__section__slide > :not(h2) {
+    display: none;
+}
+
+.diaporama__section:not(.open) h2 span:not(.title) {
+    display: none;
+}
+
+/*
+** Open
+*/
+
+.diaporama__section.open * {
+    float: left;
+
+    display: inline-block;
+}
+
+.diaporama__section.open h2 span.title {
+    position: relative;
+    left: 1em;
+
+    text-align: left;
+    text-transform: none;
+
+    -webkit-transform: none;
+       -moz-transform: none;
+        -ms-transform: none;
+         -o-transform: none;
+            transform: none;
+}
+
+.diaporama__section.open h2 span.title--title {
+    display: none;
+}
+
+.diaporama__section.open img {
+    height: calc(100% - 8em);
+
+    padding: 3em 2em;
+}
+
+.diaporama__section.open p {
+    width: 450px;
+    height: calc(100% - 8em);
+    padding: 1em 2em;
+
+    color: #ffffff;
+    font-size: 1.5em;
+}
+
+.diaporama__section.open p * {
+    display: block;
+    float: none;
+}
+
+.diaporama__section.open p a {
+    color: inherit;
+}
+
+.diaporama__section.open .diaporama__section__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: .7em;
+    }
+
+    .diaporama__section__close {
+        top: 51px;
+    }
+
+    .diaporama__section h2 {
+        font-size: 2.5em;
+    }
+
+    .diaporama__section.open p {
+        width: 250px;
+    }
+}
+
+.diaporama__sectionem, .diaporama__section sup, .diaporama__section a {
+    float: none !important;
+    display: inline !important;
+}
