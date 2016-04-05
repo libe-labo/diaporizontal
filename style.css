@@ -182,7 +182,7 @@ html, body {
     }
 }
 
-.diaporama__sectionem, .diaporama__section sup, .diaporama__section a {
+.diaporama__section em, .diaporama__section sup, .diaporama__section a:not(.diaporama__section__close) {
     float: none !important;
     display: inline !important;
 }
